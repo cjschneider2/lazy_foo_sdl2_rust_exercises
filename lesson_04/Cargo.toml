@@ -1,0 +1,6 @@
+[package]
+name = "lesson_04"
+version = "0.1.0"
+authors = ["C. Jeremiah Schneider <schneider@br-tech.de>"]
+
+[dependencies]
