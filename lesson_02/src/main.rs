@@ -8,7 +8,6 @@ use sdl2::video::Window;
 use sdl2::render::Canvas;
 use sdl2::pixels::Color;
 use sdl2::rect::Rect;
-use sdl2::surface::Surface;
 use sdl2::image::LoadTexture;
 use sdl2::image::{INIT_JPG, INIT_PNG};
 
@@ -62,12 +61,17 @@ fn main() {
       Err(e) => panic!(e),
    };
 
-   sdl.canvas.set_draw_color(Color::RGB(255,210,0));
-   sdl.canvas.fill_rect(Rect::new(10,10,40,40)).unwrap();
+   let mut quit = false;
 
-   sdl.canvas.copy(&img, None, Some(Rect::new(50,50,100,100))).unwrap();
+   while !quit {
+      sdl.canvas.set_draw_color(Color::RGB(255,210,0));
+      sdl.canvas.fill_rect(Rect::new(10,10,40,40)).unwrap();
 
-   sdl.canvas.present();
+      sdl.canvas.copy(&img, None, Some(Rect::new(50,50,100,100))).unwrap();
 
-   std::thread::sleep(std::time::Duration::new(1,0));
+      sdl.canvas.present();
+
+      std::thread::sleep(std::time::Duration::new(1,0));
+      quit = true;
+   }
 }
