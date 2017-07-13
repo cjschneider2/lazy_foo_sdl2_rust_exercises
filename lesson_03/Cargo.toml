@@ -1,6 +1,9 @@
 [package]
 name = "lesson_03"
 version = "0.1.0"
-authors = ["C. Jeremiah Schneider <schneider@br-tech.de>"]
+authors = ["C. Jeremiah Schneider <cjschneider2@gmail.com>"]
 
-[dependencies]
+[dependencies.sdl2]
+version = "0.30"
+default-features = false
+features = ["image"]
